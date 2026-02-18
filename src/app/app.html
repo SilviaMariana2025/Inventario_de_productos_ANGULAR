@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Inventario de Productos</h1>
+
+  <app-product-form 
+    (productCreated)="addProduct($event)">
+  </app-product-form>
+
+<app-product-list 
+  [products]="products"
+  (productDeleted)="deleteProduct($event)">
+</app-product-list>
+
+
+  <div class="total" *ngIf="totalPrice > 0">
+    Total: {{ totalPrice | currency:'COP ' }}
+  </div>
+
+  <div class="alert" *ngIf="totalPrice > 100000">
+    ⚠ Total supera 100000
+  </div>
+</div>

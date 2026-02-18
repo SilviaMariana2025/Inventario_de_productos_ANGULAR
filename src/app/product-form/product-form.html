@@ -1,0 +1,14 @@
+<h2>Agregar producto</h2>
+
+<input type="text" [(ngModel)]="name" placeholder="Nombre">
+<input type="number" [(ngModel)]="price" placeholder="Precio">
+
+<button (click)="addProduct()">Agregar</button>
+
+<div *ngIf="!name">
+  ⚠️ El nombre es obligatorio
+</div>
+
+<div *ngIf="price !== null && price <= 0">
+  ⚠️ El precio debe ser mayor que 0
+</div>
