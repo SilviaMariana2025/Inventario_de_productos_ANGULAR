@@ -1,0 +1,10 @@
+<div *ngIf="products.length === 0">
+  no hay productos 
+</div>
+
+<ul>
+  <li *ngFor="let p of products">
+    {{ p.name }} - ${{ p.price }}
+    <button (click)="remove(p.id)">Eliminar</button>
+  </li>
+</ul>

@@ -1,0 +1,33 @@
+<div class="contenedor-principal">
+
+  <h1 class="titulo">Inventario Productos Mariana</h1>
+
+  <div class="contenido">
+
+
+    <div class="formulario">
+      <app-product-form
+        (productCreated)="addProduct($event)">
+      </app-product-form>
+    </div>
+
+
+    <div class="lista">
+      <app-product-list
+        [products]="products"
+        (deleteProduct)="deleteProduct($event)">
+      </app-product-list>
+
+      <hr>
+
+      <p>Total productos: {{ products.length }}</p>
+      <p>Total precio: ${{ total }}</p>
+
+      <div *ngIf="total > 100000" class="alert">
+        ¡Gran inventario!
+      </div>
+    </div>
+
+  </div>
+
+</div>

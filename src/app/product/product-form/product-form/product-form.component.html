@@ -1,0 +1,11 @@
+<div class="form">
+  <input [(ngModel)]="name" placeholder="producto">
+  <input [(ngModel)]="price" type="number" placeholder="precio">
+
+  <button (click)="submitProduct()">agregar</button>
+
+  <div *ngIf="name.trim() === '' || price <= 0" class="error">
+ meter nombre y precio validos
+  </div>
+</div>
+
